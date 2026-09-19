@@ -53,7 +53,7 @@ export function TaskComposer({ onAdd }: TaskComposerProps) {
           </p>
         </div>
 
-        <div className="field">
+        <div className="field ">
           <label htmlFor="task-priority">Priority</label>
           <select
             id="task-priority"
@@ -66,7 +66,7 @@ export function TaskComposer({ onAdd }: TaskComposerProps) {
             <option value="low">Low</option>
           </select>
         </div>
-
+        
         <button type="submit" className="primary-action">
           Add Task
         </button>

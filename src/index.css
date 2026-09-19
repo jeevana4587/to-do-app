@@ -148,12 +148,35 @@ button {
   display: grid;
   gap: var(--space-4);
   min-width: 0;
+  
 }
 
 .composer-form {
   grid-template-columns: minmax(0, 1fr) 160px auto;
-  align-items: end;
+  grid-template-rows: auto auto auto;
+  column-gap: var(--space-4);
+  row-gap: var(--space-2);
+  align-items: start;
 }
+
+.composer-form .field {
+  display: contents;
+}
+
+.composer-form .field:first-child label { grid-column: 1; grid-row: 1; }
+.composer-form .field:first-child input { grid-column: 1; grid-row: 2; }
+.composer-form .field:first-child .hint  { grid-column: 1; grid-row: 3; }
+
+.composer-form .field:nth-child(2) label  { grid-column: 2; grid-row: 1; }
+.composer-form .field:nth-child(2) select { grid-column: 2; grid-row: 2; }
+
+
+.composer-form .primary-action {
+  grid-column: 3;
+  grid-row: 2;
+  align-self: stretch;
+}
+
 
 .filters-grid {
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) 180px;
@@ -163,6 +186,7 @@ button {
 .field {
   min-width: 0;
   display: grid;
+  
 }
 
 .field input,

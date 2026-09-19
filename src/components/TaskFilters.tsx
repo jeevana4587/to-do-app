@@ -9,11 +9,7 @@ interface TaskFiltersProps {
   onPriorityChange: (value: PriorityFilter) => void;
 }
 
-const STATUS_OPTIONS: { value: StatusFilter; label: string }[] = [
-  { value: "all", label: "All" },
-  { value: "active", label: "Active" },
-  { value: "completed", label: "Completed" },
-];
+
 
 export function TaskFilters({
   searchQuery,
@@ -39,24 +35,20 @@ export function TaskFilters({
           />
         </div>
 
-        <div className="field">
-          <p id="status-filter-label" className="field-label">
-            Status
-          </p>
-          <div className="segmented" role="group" aria-labelledby="status-filter-label">
-            {STATUS_OPTIONS.map((option) => (
-              <button
-                key={option.value}
-                type="button"
-                className={statusFilter === option.value ? "segment is-active" : "segment"}
-                aria-pressed={statusFilter === option.value}
-                onClick={() => onStatusChange(option.value)}
-              >
-                {option.label}
-              </button>
-            ))}
-          </div>
-        </div>
+        <div className="field ">
+  <label htmlFor="status-filter">Status</label>
+  <select
+    id="status-filter"
+    value={statusFilter}
+    onChange={(event) =>
+      onStatusChange(event.target.value as StatusFilter)
+    }
+  >
+    <option value="all">All</option>
+    <option value="active">Active</option>
+    <option value="completed">Completed</option>
+  </select>
+</div>
 
         <div className="field">
           <label htmlFor="priority-filter">Priority</label>
