@@ -425,3 +425,10 @@ button {
     padding: var(--space-4);
   }
 }
+
+@media (max-width: 640px) {
+  .filters-grid,
+  .edit-form {
+    grid-template-columns: 1fr;
+  }
+}

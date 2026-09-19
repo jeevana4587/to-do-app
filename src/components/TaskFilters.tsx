@@ -35,7 +35,7 @@ export function TaskFilters({
           />
         </div>
 
-        <div className="field ">
+        <div className="field">
   <label htmlFor="status-filter">Status</label>
   <select
     id="status-filter"
