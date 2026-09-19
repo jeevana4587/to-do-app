@@ -152,8 +152,9 @@ button {
 }
 
 .composer-form {
+  display: grid;
   grid-template-columns: minmax(0, 1fr) 160px auto;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto; /* label / control / hint */
   column-gap: var(--space-4);
   row-gap: var(--space-2);
   align-items: start;
@@ -163,9 +164,11 @@ button {
   display: contents;
 }
 
+
 .composer-form .field:first-child label { grid-column: 1; grid-row: 1; }
 .composer-form .field:first-child input { grid-column: 1; grid-row: 2; }
 .composer-form .field:first-child .hint  { grid-column: 1; grid-row: 3; }
+
 
 .composer-form .field:nth-child(2) label  { grid-column: 2; grid-row: 1; }
 .composer-form .field:nth-child(2) select { grid-column: 2; grid-row: 2; }
@@ -384,6 +387,19 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .composer-form .field:first-child label { grid-column: 1; grid-row: 1; }
+  .composer-form .field:first-child input { grid-column: 1; grid-row: 2; }
+  .composer-form .field:first-child .hint  { grid-column: 1; grid-row: 3; }
+
+  .composer-form .field:nth-child(2) label  { grid-column: 1; grid-row: 4; }
+  .composer-form .field:nth-child(2) select { grid-column: 1; grid-row: 5; }
+
+  .composer-form .primary-action {
+    grid-column: 1;
+    grid-row: 6;
+    width: 100%;
+  }
+
   .stats-row {
     grid-template-columns: 1fr;
   }
@@ -392,6 +408,7 @@ button {
     flex-direction: column;
     align-items: stretch;
   }
+
 
   .search-field,
   .primary-action {
